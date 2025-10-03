@@ -1,0 +1,19 @@
+# Analytical Network Input File
+
+# 2D Mesh Topology with 32 NPUs (4x8 mesh)
+# A mesh is implemented as Ring topology in both dimensions
+# This creates a 4x8 grid where each node connects to its neighbors
+
+# Mesh Topology (Ring in both dimensions)
+topology: [ Ring, Ring ]  # Ring, Switch, FullyConnected
+
+# 32 NPUs arranged as 4x8 mesh
+npus_count: [ 4, 8 ]  # number of NPUs per dimension (4 x 8 = 32)
+
+# Bandwidth per each dimension (per direction)
+bandwidth: [ 400.0, 400.0 ]  # GB/s
+
+# Latency per each dimension
+latency: [ 250.0, 250.0 ]  # ns
+
+

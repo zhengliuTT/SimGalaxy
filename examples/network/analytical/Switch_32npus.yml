@@ -1,0 +1,22 @@
+# Analytical Network Input File
+
+# Switch Topology with 32 NPUs
+# All NPUs are connected to a central switch
+# This represents a star topology where all nodes communicate through the switch
+
+# Switch Topology
+topology: [ Switch ]  # Ring, Switch, FullyConnected
+
+# 32 NPUs connected to switch
+npus_count: [ 32 ]  # number of NPUs
+
+# Bandwidth per each link (per direction)
+# Note: ASTRA-sim analytical backend doubles latency for switch, so actual latency = 2x specified
+bandwidth: [ 400.0 ]  # GB/s
+
+# Latency per each link
+# Because ASTRA-sim analytical doubles switch latency, specify half the desired link latency
+# Desired link latency: 500 ns, so specify 250 ns here
+latency: [ 250.0 ]  # ns (actual link latency will be 2x = 500 ns)
+
+
